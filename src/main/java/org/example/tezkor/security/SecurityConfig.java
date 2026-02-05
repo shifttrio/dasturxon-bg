@@ -46,19 +46,19 @@ public class SecurityConfig {
 
                         // PUBLIC endpointlar
                         .requestMatchers(
-                                "/auth/",
-                                "/user/",
-                                "/api/contacts/",
-                                "/api/cart/",
-                                "/swagger-ui/",
-                                "/v3/api-docs/",
+                                "/auth/**",
+                                "/user/**",
+                                "/api/contacts/**",
+                                "/api/cart/**",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
                                 "/swagger-ui.html",
                                 "/error"
                         ).permitAll()
 
                         // ROLE asosida
-                        .requestMatchers("/owner/").hasRole("OWNER")
-                        .requestMatchers("/admin/").hasRole("ADMIN")
+                        .requestMatchers("/owner/**").hasRole("OWNER")
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
 
                         // Qolgan hammasi token talab qiladi
                         .anyRequest().authenticated()
