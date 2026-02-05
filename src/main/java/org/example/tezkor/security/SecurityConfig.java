@@ -42,7 +42,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
 
                         // Preflight (CORS OPTIONS)
-                        .requestMatchers(HttpMethod.OPTIONS, "/").permitAll()
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
                         // PUBLIC endpointlar
                         .requestMatchers(
