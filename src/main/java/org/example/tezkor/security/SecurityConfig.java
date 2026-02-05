@@ -31,7 +31,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
 
                 // CORS yoqiladi
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .cors(cors -> cors.disable()) // 👈 muhim
 
                 // Session ishlatilmaydi (JWT)
                 .sessionManagement(session ->
